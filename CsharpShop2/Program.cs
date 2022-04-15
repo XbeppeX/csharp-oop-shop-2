@@ -2,10 +2,28 @@
 
 Prodotto Mioprodotto = new Prodotto("banane", "Provenienza Africa", 3, 4);
 Acqua bottiglia1 = new Acqua("Ferrarelle", "Minerale", 2.50, 4, 1, 7.5, "Roccamonfina");
+Elettrodomestico lavatrice = new Elettrodomestico("Lavatrice", "lavatrice 10kg", 200, 22, "Samsung");
+
+lavatrice.StampaProdotto();
 
 int codice = Mioprodotto.GetCodice();
 Console.WriteLine("Il codice prodotto è: " + codice);
+Console.WriteLine("Il codice prodotto è: " + Mioprodotto.GetDescrizione());
 
+Console.WriteLine("Inserisci i litri da bere");
+double litri = Convert.ToDouble(Console.ReadLine());
+
+
+try
+{
+    bottiglia1.Bevi(litri);
+} catch (ArgumentOutOfRangeException e)
+{
+    Console.WriteLine("Mi dispiace ma il parametro " + e.ParamName + " ha detto " + e.Message);
+} catch (EmptyBottleException)
+{
+    Console.WriteLine("La tua bottiglia è vuota!");
+}
 
 Console.WriteLine("");
 

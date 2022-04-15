@@ -62,13 +62,18 @@ namespace CsharpShop2
 
 		public void Bevi(double litriDaBere)
         {
+            if (litriDaBere < 0)
+            {
+				throw new ArgumentOutOfRangeException("litriDabere, ", "Il suo valore è negativo");
+            }
+
 			if(this.litri - litriDaBere > 0)
             {
 				this.litri = this.litri - litriDaBere;
 				Console.WriteLine("glu glu glu, ho bevuto " + litriDaBere);
 			} else
 			{
-				Console.WriteLine("glu glu glu, hai bevuto tutta l'acqua disponibile");
+				throw new EmptyBottleException();
 				this.litri = 0;
 			}
 		}

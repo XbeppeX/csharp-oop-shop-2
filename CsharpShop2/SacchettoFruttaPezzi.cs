@@ -17,6 +17,11 @@ namespace CsharpShop2
 			return pezzi;
 		}
 
+		public int GetMassimiPezziSacchetto()
+		{
+			return massimiPezziSacchetto;
+		}
+
 		public void CalcoloPezziSacchetto()
 		{
 			if (pezzi <= massimiPezziSacchetto)
