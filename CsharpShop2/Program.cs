@@ -13,7 +13,7 @@ Console.WriteLine("Il codice prodotto è: " + Mioprodotto.GetDescrizione());
 Console.WriteLine("Inserisci i litri da bere");
 double litri = Convert.ToDouble(Console.ReadLine());
 
-
+//try
 try
 {
     bottiglia1.Bevi(litri);
